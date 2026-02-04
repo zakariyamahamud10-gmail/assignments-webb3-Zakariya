@@ -8,6 +8,14 @@ export function createNav(currentPage) {
     if (!navList) return;
 
     navList.innerHTML = "";
+    
+    let sökväg = "";
+
+  if (currentPage === "home") {
+    sökväg = "";
+  } else {
+    sökväg = "../";
+  }
 
     for (let i = 0; i < assignments.length; i++) {
         const a = assignments[i];

@@ -39,8 +39,8 @@ nav a:hover {
 
 .active {
   font-weight: bold;
-  background: greenyellow;
-  color: #d72638;
+  background: #ffd23f;
+  color: black;
 }
 
 /* Main */

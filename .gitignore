@@ -2,6 +2,6 @@
 .DS_Store
 Thumbs.db
 
-# Editor-filer
+# Editor
 .vscode/
 *.swp
