@@ -4,7 +4,7 @@ export const assignments = [
   {
     id: "home",
     title: "Start",
-    link: "/index.html",
+    link: "index.html",
     description: "Landningssida för inlämningsuppgifter."
   },
   {

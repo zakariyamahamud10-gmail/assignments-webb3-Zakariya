@@ -8,15 +8,7 @@ export function createNav(currentPage) {
     if (!navList) return;
 
     navList.innerHTML = "";
-    
-    let sökväg = "";
-
-  if (currentPage === "home") {
-    sökväg = "";
-  } else {
-    sökväg = "../";
-  }
-
+  
     for (let i = 0; i < assignments.length; i++) {
         const a = assignments[i];
 
@@ -24,6 +16,14 @@ export function createNav(currentPage) {
 
         if(a.id === currentPage) {
             activeClass = "active";
+        }
+
+        let link = a.link;
+
+        if(currentPage !== "home") {
+            if(a.id === "home") {
+                link = "../index.html"
+            }
         }
 
           // Skapar en länk i navigationen, här istället för att skriva ut det i html
