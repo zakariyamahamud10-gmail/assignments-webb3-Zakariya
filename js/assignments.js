@@ -4,13 +4,13 @@ export const assignments = [
   {
     id: "home",
     title: "Start",
-    link: "index.html",
+    link: "/index.html",
     description: "Landningssida för inlämningsuppgifter."
   },
   {
-    id: "assignment1",
+    id: "assignments1",
     title: "Uppgift 1",
-    link: "assignments1/index.html",
+    link: "/assignments1/index.html",
     description: "Samlingssida med dynamisk navigation."
   },
   {

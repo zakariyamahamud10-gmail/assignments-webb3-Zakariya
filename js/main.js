@@ -51,14 +51,28 @@
 // }
 
 // Importerar funktioner
-import { buildNav } from "./nav.js";
+import { createNav } from "./nav.js";
 import { buildCards } from "./cards.js";
 
-// Denna sida är startsidan
-const currentPage = "home";
+import { about } from "./about.js";
+
+// Hämta about-sektionen
+const aboutSection = document.getElementById("about");
+
+if (aboutSection) {
+  aboutSection.innerHTML += `
+    <p>Namn: ${about.name}</p>
+    <p>Kurs: ${about.course}</p>
+    <p>Användarnamn: ${about.username}</p>
+  `;
+}
+
+const currentPage = document.body.dataset.page;
+console.log("aktuell sida:", currentPage)
+
 
 // Bygger navigation
-buildNav(currentPage);
+createNav(currentPage);
 
 // Bygger cards
 buildCards();

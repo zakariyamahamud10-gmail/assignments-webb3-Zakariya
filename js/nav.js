@@ -2,7 +2,7 @@ import { assignments } from "./assignments.js";
 
 //hela funktionen som bygger naven
 
-export function buildNav(currentPage) {
+export function createNav(currentPage) {
     const navList = document.getElementById("nav-list");
 
     if (!navList) return;
