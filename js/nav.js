@@ -29,7 +29,7 @@ export function createNav(currentPage) {
           // Skapar en länk i navigationen, här istället för att skriva ut det i html
     navList.innerHTML += `
       <li>
-        <a class="${activeClass}" href="${sökväg}${a.link}">
+        <a class="${activeClass}" href="${link}">
           ${a.title}
         </a>
       </li>
