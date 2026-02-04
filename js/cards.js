@@ -8,6 +8,7 @@ export function buildCards () {
     console.log("cards elemnetet hittd", cards)
 
     if (!cards) return;
+    console.log("ej hittad")
 
     cards.innerHTML = "";
 

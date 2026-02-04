@@ -63,6 +63,7 @@ if (aboutSection) {
   aboutSection.innerHTML += `
     <p>Namn: ${about.name}</p>
     <p>Kurs: ${about.course}</p>
+    <p>Kurs: ${about.courseCode}</p>
     <p>Användarnamn: ${about.username}</p>
   `;
 }

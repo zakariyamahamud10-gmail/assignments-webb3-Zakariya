@@ -18,7 +18,7 @@ export function createNav(currentPage) {
             activeClass = "active";
         }
 
-          // Skapar en länk i navigationen
+          // Skapar en länk i navigationen, här istället för att skriva ut det i html
     navList.innerHTML += `
       <li>
         <a class="${activeClass}" href="${a.link}">
