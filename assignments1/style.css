@@ -1,39 +1,48 @@
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f5f5f5;
+/* =========================
+   Uppgift 1 – Alternativt färgtema
+   Samma retro vibe, andra färger
+   ========================= */
+
+/* Bakgrund & text */
+body {
+  background: #e6f0f8; /* ljus blågrå istället för grå */
+  color: #1a1a1a;
 }
 
+/* Header – arcade-blå */
 header {
-  background: #222;
-  color: white;
-  padding: 1rem;
+  background: #2a6fdb; /* retro blå */
+  border-bottom: 4px solid #111;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-}
-
+/* Navigation länkar */
 nav a {
   color: white;
-  text-decoration: none;
 }
 
-nav a.active {
-  font-weight: bold;
-  text-decoration: underline;
+/* Active = mint-grön istället för gul */
+.active {
+  background: #7bd389;
+  color: #111;
 }
 
-main {
-  padding: 1.5rem;
-}
-
+/* Cards */
 article {
-  background: white;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-} */
+  background: #ffffff;
+  border: 3px solid #111;
+  box-shadow: 6px 6px 0 #111;
+}
+
+/* Game-buttons (länkar i cards) */
+article a {
+  background: #7bd389; /* mint-grön knapp */
+  color: #111;
+
+  border: 2px solid #111;
+  box-shadow: 3px 3px 0 #111;
+}
+
+article a:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #111;
+}

@@ -18,20 +18,30 @@ export function createNav(currentPage) {
             activeClass = "active";
         }
 
-        let link = a.link;
-   // Om vi är på en undersida (inte home)
-    if (currentPage !== "home") {
-      if (a.id === "home") {
-        // till startsidan: gå upp en nivå
+       let link = a.link;
+
+// här kollar vi om vi är på startsidan eller inte, är vi inte home så betyder det att vi är nere i en mapp, alltså assignments1
+
+if (currentPage !== "home") {
+
+    console.log("inte på home, vi är i en undermapp ");
+
+    // om länken ska till startsidan, då måste vi gå upp en nivå först annars hittar den inte rätt
+    if (a.id === "home") {
         link = "../index.html";
-      } else if (a.id === currentPage) {
-        // till samma sida: håll dig i mappen
+        console.log("går upp en nivå till startsidan");
+    } 
+    // om man klickar på sidan man redan är på, då ska vi inte gå upp eller ner nånstans
+    // bara stanna i samma mapp
+    else if (a.id === currentPage) {
         link = "index.html";
-      } else {
-        // till andra uppgifter: gå upp och sedan ner
+    } 
+    // annars är det en annan uppgift, då går vi först upp en mapp sen in i rätt
+    else {
         link = "../" + a.link;
-      }
-        }
+    }
+}
+
 
 
 

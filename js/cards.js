@@ -1,7 +1,7 @@
 import { assignments } from "./assignments.js";
 
 // exporterar för andra filer så den kan användas
-export function buildCards () {
+export function buildCards() {
     console.log("buildCard köörs!!!!");
 
     const cards = document.getElementById("cards");
