@@ -1,58 +1,37 @@
 import { assignments } from "./assignments.js";
 
-//hela funktionen som bygger naven
-
 export function createNav(currentPage) {
-    const navList = document.getElementById("nav-list");
+  console.log("createNav körs, currentPage =", currentPage);
 
-    if (!navList) return;
+  const navList = document.getElementById("nav-list");
+  if (!navList) return; // om sidan saknar nav-list så gör vi inget
 
-    navList.innerHTML = "";
+  navList.innerHTML = ""; // rensa så vi inte dubblar nav
 
-    for (let i = 0; i < assignments.length; i++) {
-        const a = assignments[i];
+  // hur många länkar som kommer byggas från databasen
+  console.log("bygger nav, antal länkar =", assignments.length);
 
-        let activeClass = "";
+  for (let i = 0; i < assignments.length; i++) {
+    const a = assignments[i];
 
-        if (a.id === currentPage) {
-            activeClass = "active";
-        }
+    let activeClass = "";
+    if (a.id === currentPage) activeClass = "active"; // markerar aktiv sida css
 
-       let link = a.link;
+    let link = a.link; // börja med länken från assignments.js
 
-// här kollar vi om vi är på startsidan eller inte, är vi inte home så betyder det att vi är nere i en mapp, alltså assignments1
-
-if (currentPage !== "home") {
-
-    console.log("inte på home, vi är i en undermapp ");
-
-    // om länken ska till startsidan, då måste vi gå upp en nivå först annars hittar den inte rätt
-    if (a.id === "home") {
-        link = "../index.html";
-        console.log("går upp en nivå till startsidan");
-    } 
-    // om man klickar på sidan man redan är på, då ska vi inte gå upp eller ner nånstans
-    // bara stanna i samma mapp
-    else if (a.id === currentPage) {
-        link = "index.html";
-    } 
-    // annars är det en annan uppgift, då går vi först upp en mapp sen in i rätt
-    else {
-        link = "../" + a.link;
+    // om vi är i undermapp behöver vi fixa relativa länkar ../ osv)
+    if (currentPage !== "home") {
+      if (a.id === "home") link = "../index.html";
+      else if (a.id === currentPage) link = "index.html";
+      else link = "../" + a.link;
     }
-}
-
-
-
-
-        // Skapar en länk i navigationen, här istället för att skriva ut det i html
-        navList.innerHTML += `
+//skriva länken i html
+    navList.innerHTML += `
       <li>
         <a class="${activeClass}" href="${link}">
           ${a.title}
         </a>
       </li>
     `;
-    }
+  }
 }
-

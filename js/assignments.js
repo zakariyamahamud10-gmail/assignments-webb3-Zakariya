@@ -12,7 +12,8 @@ export const assignments = [
     title: "Uppgift 1",
     link: "assignments1/index.html",
     description: "Samlingssida med dynamisk navigation."
-  }
+  },
+  
   
 ];
 
