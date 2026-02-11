@@ -13,8 +13,15 @@ export const assignments = [
     link: "assignments1/index.html",
     description: "Samlingssida med dynamisk navigation."
   },
-  
-  
+  {
+    id: "assignments2",
+    title: "Uppgift 2",
+    link: "assignments2/index.html",
+    description: "Samlingssida med dynamisk navigation."
+  },
+
+
+
 ];
 
 

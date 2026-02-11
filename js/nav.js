@@ -20,12 +20,13 @@ export function createNav(currentPage) {
     let link = a.link; // börja med länken från assignments.js
 
     // om vi är i undermapp behöver vi fixa relativa länkar ../ osv)
-    if (currentPage !== "home") {
-      if (a.id === "home") link = "../index.html";
-      else if (a.id === currentPage) link = "index.html";
-      else link = "../" + a.link;
+    if (currentPage === "home") {
+      link = a.link;
+    } else {
+      link = "../" + a.link;
     }
-//skriva länken i html
+
+    //skriva länken i html
     navList.innerHTML += `
       <li>
         <a class="${activeClass}" href="${link}">
