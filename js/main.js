@@ -29,25 +29,12 @@ createNav(currentPage);
 buildCards();
 
 ///jag är för trött så jag börjar använda svenska variabeler
+let hemmaLank = "index.html"
 
-let hemmaLank = "";
-// loopar igenom databasen och letar efter "home"
-for (let i = 0; i < assignments.length; i++) {
-
-  if (assignments[i].id === "home") {
-    // om vi är på startsidan gäller detta
-    if (currentPage === "home") {
-      hemmaLank = assignments[i].link;
-    } 
-    // om vi är i undermapp
-    else {
-      hemmaLank = "../" + assignments[i].link;
-    }
-
-    // logg: när vi hittat home
-    console.log("hittade home, länk blir:", hemmaLank);
-  }
+if (currentPage !== "home") {
+  hemmaLank = "../index.html";
 }
+console.log("hemmaLank =", hemmaLank);
 
 const tbx = document.getElementById("tbxHhem");
 

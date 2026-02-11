@@ -19,10 +19,7 @@ export function createNav(currentPage) {
 
     let link = a.link; // börja med länken från assignments.js
 
-    // om vi är i undermapp behöver vi fixa relativa länkar ../ osv)
-    if (currentPage === "home") {
-      link = a.link;
-    } else {
+    if (currentPage !== "home") {
       link = "../" + a.link;
     }
 
