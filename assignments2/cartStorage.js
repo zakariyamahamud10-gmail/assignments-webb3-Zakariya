@@ -42,14 +42,12 @@ function loadCart() {
   const text = localStorage.getItem(STORAGE_KEY);
   if (!text) return [];
 
-  try {
-    const data = JSON.parse(text);
-    if (Array.isArray(data)) return data;
-    return [];
-  } catch (fel) {
-    return [];
-  }
+  const data = JSON.parse(text);
+  if (Array.isArray(data)) return data;
+
+  return [];
 }
+
 
 function saveCart() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));

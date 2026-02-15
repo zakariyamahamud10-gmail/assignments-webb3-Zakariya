@@ -17,7 +17,7 @@ export const assignments = [
     id: "assignments2",
     title: "Uppgift 2",
     link: "assignments2/index.html",
-    description: "Samlingssida med dynamisk navigation."
+    description: "Produktsida med kundvagn."
   },
   
   

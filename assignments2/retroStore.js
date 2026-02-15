@@ -100,7 +100,7 @@ function visaKundvagn() {
     cartItems.appendChild(rad);
   }
 
-  cartTotal.textContent = String(total);
+  cartTotal.textContent = total;
 }
 
 
