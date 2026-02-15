@@ -19,6 +19,8 @@ export const assignments = [
     link: "assignments2/index.html",
     description: "Samlingssida med dynamisk navigation."
   },
+  
+  
 
 
 
