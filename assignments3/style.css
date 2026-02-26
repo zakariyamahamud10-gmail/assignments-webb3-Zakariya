@@ -1,0 +1,154 @@
+/* ====== Bas (samma struktur som U2 så nav + active funkar) ====== */
+body {
+  background: #f6f3ea; /* ljus “arena sand” */
+  color: #111;
+}
+
+header {
+  background: #2f3a56;          /* mild navy (inte mörk-svart) */
+  border-bottom: 4px solid #d4af37; /* guld */
+}
+
+/* VIKTIGT: .active måste fortsätta funka med din nav-logik */
+.active {
+  background: #d4af37; /* guld */
+  color: #111;
+}
+
+/* ====== Layout ====== */
+/* Behåller din grid-layout så inget känns “brutet” */
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+/* ====== Turnering UI ====== */
+#status {
+  margin: 0 0 1rem 0;
+  color: #3b3b3b;
+}
+
+/* bracket i rad */
+#bracket {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* runda i kolumn */
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  min-width: 240px;
+}
+
+/* Match-kort (ljusare) */
+.match {
+  background: #ffffff;
+  border: 3px solid #2f3a56;
+  box-shadow: 6px 6px 0 #222;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+/* Spelare-rader */
+.player {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  background: #fffaf0;
+}
+
+.player:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #222;
+}
+
+/* Bild */
+.player img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #2f3a56;
+  background: #fff;
+}
+
+/* Vinnarmarkering */
+.winner {
+  background: #d4af37;
+  color: #111;
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid #222;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+/* Lås match efter val */
+.disabled {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* Controls */
+.controls {
+  margin-top: 1rem;
+}
+
+/* Reset-knapp (ny accentfärg som inte är blå/lila/röd) */
+#reset-btn {
+  margin-top: 0.5rem;
+  padding: 8px 12px;
+
+  background: #2aa876; /* grön */
+  color: #fff;
+  font-weight: bold;
+
+  border: 2px solid #222;
+  box-shadow: 3px 3px 0 #222;
+  cursor: pointer;
+}
+
+#reset-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #222;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* ====== (Längst ner) Det som "krävs" för uppgiften: bracket + round layout ======
+   U3-tipset: bracket flex-row, round flex-column och space-around */
+.bracket {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.contestant img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+}
+

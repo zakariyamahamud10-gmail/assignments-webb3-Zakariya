@@ -19,6 +19,12 @@ export const assignments = [
     link: "assignments2/index.html",
     description: "Produktsida med kundvagn."
   },
+   {
+    id: "assignments2",
+    title: "Uppgift 3",
+    link: "assignments3/index.html",
+    description: "Turneringsgeneratorn"
+   }
   
   
 
