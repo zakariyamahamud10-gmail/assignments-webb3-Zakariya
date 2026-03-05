@@ -1,121 +1,139 @@
-/* ====== Bas (samma struktur som U2 så nav + active funkar) ====== */
 body {
-  background: #f6f3ea; /* ljus “arena sand” */
-  color: #111;
+  background: #e9e9e9;
+  color: #222;
 }
 
 header {
-  background: #2f3a56;          /* mild navy (inte mörk-svart) */
-  border-bottom: 4px solid #d4af37; /* guld */
+  background: #0a7649;
+  color: #fff;
+  border-bottom: 4px solid #222;
 }
 
-/* VIKTIGT: .active måste fortsätta funka med din nav-logik */
-.active {
-  background: #d4af37; /* guld */
-  color: #111;
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  background: #1b4332;
+  color: #fff;
+  border-top: 4px solid #222;
+  padding: 1rem;
 }
 
-/* ====== Layout ====== */
-/* Behåller din grid-layout så inget känns “brutet” */
 main {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 2rem;
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-width: 0;
 }
 
-/* ====== Turnering UI ====== */
 #status {
   margin: 0 0 1rem 0;
-  color: #3b3b3b;
+  color: #333;
 }
 
-/* bracket i rad */
 #bracket {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: row;
   align-items: stretch;
+  gap: 1.5rem;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 0.5rem;
 }
 
-/* runda i kolumn */
 .round {
+  min-width: 220px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.round h2 {
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.round .matches {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 1rem;
-  min-width: 240px;
+  gap: 0.85rem;
+  height: 100%;
 }
 
-/* Match-kort (ljusare) */
 .match {
-  background: #ffffff;
-  border: 3px solid #2f3a56;
+  background: #fff;
+  border: 3px solid #222;
   box-shadow: 6px 6px 0 #222;
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 0.75rem;
+  border-radius: 0;
 }
 
-/* Spelare-rader */
-.player {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem;
-  border: 2px solid #d4af37;
-  border-radius: 8px;
+.contestant {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.25rem 0.75rem;
+  padding: 0.55rem;
+  background: #fff;
+  border: 2px solid #222;
+  box-shadow: 3px 3px 0 #222;
+  border-radius: 0;
   cursor: pointer;
-  margin-bottom: 0.5rem;
-  background: #fffaf0;
+  user-select: none;
 }
 
-.player:hover {
+.contestant img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border: 2px solid #222;
+  border-radius: 0;
+  background: #fff;
+  image-rendering: pixelated;
+  grid-row: 1 / span 3;
+}
+
+.contestant h3,
+.contestant p {
+  margin: 0;
+}
+
+.contestant h3 {
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.contestant p {
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+.contestant:hover {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0 #222;
 }
 
-/* Bild */
-.player img {
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #2f3a56;
-  background: #fff;
-}
-
-/* Vinnarmarkering */
-.winner {
-  background: #d4af37;
+.contestant.winner {
+  background: #e2caa1;
   color: #111;
   font-weight: bold;
-  padding: 0.4rem 0.6rem;
-  border: 2px solid #222;
-  border-radius: 8px;
-  display: inline-block;
-  margin-bottom: 0.75rem;
 }
 
-/* Lås match efter val */
-.disabled {
-  opacity: 0.75;
-  pointer-events: none;
+.contestant.loser {
+  opacity: 0.55;
 }
 
-/* Controls */
-.controls {
-  margin-top: 1rem;
-}
-
-/* Reset-knapp (ny accentfärg som inte är blå/lila/röd) */
 #reset-btn {
   margin-top: 0.5rem;
   padding: 8px 12px;
-
-  background: #2aa876; /* grön */
+  background: #6f4b2a;
   color: #fff;
   font-weight: bold;
-
   border: 2px solid #222;
   box-shadow: 3px 3px 0 #222;
+  border-radius: 0;
   cursor: pointer;
 }
 
@@ -123,32 +141,3 @@ main {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0 #222;
 }
-
-/* Footer */
-footer {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #333;
-}
-
-/* ====== (Längst ner) Det som "krävs" för uppgiften: bracket + round layout ======
-   U3-tipset: bracket flex-row, round flex-column och space-around */
-.bracket {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.round {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.contestant img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  display: block;
-}
-
