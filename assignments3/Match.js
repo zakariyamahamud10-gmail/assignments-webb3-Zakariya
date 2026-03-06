@@ -34,7 +34,7 @@ export default class Match {
 
     this.#winner = player;
 
-    // callback till main.js när matchen är avgjord
+    // callback till main när matchen är avgjord
     this.#matchDecided?.(this);
 
     return true;

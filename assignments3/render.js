@@ -1,13 +1,9 @@
-// render.js
-// Ansvar: bara rendering i DOM + UI-interaktion
-
 function createContestantCard(player) {
   const article = document.createElement("article");
   article.classList.add("contestant");
 
   const img = document.createElement("img");
-  img.src = "images/placeholder.png";
-  img.alt = player.name ?? "Contestant";
+img.src = player.image ?? "images/placeholder.png";  img.alt = player.name ?? "Contestant";
 
   const title = document.createElement("h3");
   title.textContent = player.name ?? "Okänt namn";
