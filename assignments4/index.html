@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spökhusbyrån</title>
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="js/index.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Spökhusbyrån AB</h1>
+    <nav>
+      <ul id="nav-list"></ul>
+    </nav>
+  </header>
+
+  <main>
+    <p class="tagline">Hyr ett hemsökt hus om du vågar.</p>
+
+    <div id="error-box" class="error" style="display:none;"></div>
+
+    <section class="filter-section">
+      <h2>Filtrera hus</h2>
+      <form id="filter-form" novalidate>
+        <div class="filter-group">
+          <label for="max-price">Max pris per natt: <span id="max-price-label">3000 kr</span></label>
+          <input type="range" id="max-price" min="0" max="3000" value="3000" step="50" />
+        </div>
+
+        <div class="filter-group">
+          <label for="scare-level">Lägsta skräcknivå: <span id="scare-level-label">Alla nivåer</span></label>
+          <input type="range" id="scare-level" min="0" max="5" value="0" step="1" />
+        </div>
+
+        <div class="filter-group">
+          <label for="ghost-type">Typ av spöke:</label>
+          <select id="ghost-type">
+            <option value="all">Alla typer</option>
+          </select>
+        </div>
+
+        <div class="filter-group filter-checkbox">
+          <label>
+            <input type="checkbox" id="wifi-only" />
+            Endast hus med Wifi
+          </label>
+        </div>
+      </form>
+    </section>
+
+    <div id="no-results" class="no-results" style="display:none;">
+      Inga hus matchar din sökning. Prova att ändra filtren.
+    </div>
+
+    <section id="houses-container" class="houses-grid"></section>
+  </main>
+
+  <footer>
+    <p>© Spökhusbyrån AB — Vi tar inget ansvar för övernaturliga händelser.</p>
+  </footer>
+</body>
+</html>

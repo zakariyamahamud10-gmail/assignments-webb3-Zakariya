@@ -20,11 +20,17 @@ export const assignments = [
     description: "Produktsida med kundvagn."
   },
    {
-    id: "assignments2",
+    id: "assignments3",
     title: "Uppgift 3",
     link: "assignments3/index.html",
     description: "Turneringsgeneratorn"
    },
+   {
+  id: "assignments4",
+  title: "Uppgift 4",
+  link: "assignments4/index.html",
+  description: "Spökhusbyrån — hyra hemsökta hus."
+}
    
   
   

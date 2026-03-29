@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spökhusbyrån</title>
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="js/house.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Spökhusbyrån AB</h1>
+    <nav>
+      <ul id="nav-list"></ul>
+    </nav>
+  </header>
+
+  <main>
+    <a href="index.html" class="back-link">← Tillbaka till alla hus</a>
+
+    <div id="error-box" class="error" style="display:none;"></div>
+
+    <div id="content" style="display:none;">
+
+      <section class="house-detail">
+        <img id="house-image" class="house-detail-img" src="" alt="" />
+        <div class="house-detail-info">
+          <h2 id="house-name"></h2>
+          <p id="house-location" class="location"></p>
+          <p id="house-description" class="description"></p>
+          <ul class="house-meta">
+            <li><strong>Pris:</strong> <span id="house-price"></span></li>
+            <li><strong>Skräcknivå:</strong> <span id="house-scare"></span></li>
+            <li><strong>Spöktyper:</strong> <span id="house-ghosts"></span></li>
+            <li><strong>WiFi:</strong> <span id="house-wifi"></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="weather-section" class="weather-section">
+        <p>Hämtar väderdata...</p>
+      </section>
+
+      <section class="booking-section">
+        <h2>Boka ditt äventyr</h2>
+
+        <div id="form-errors" class="error" style="display:none;"></div>
+
+        <form id="booking-form" novalidate>
+          <div class="form-group">
+            <label for="check-in">Incheckningsdatum *</label>
+            <input type="date" id="check-in" required />
+          </div>
+
+          <div class="form-group">
+            <label for="days">Antal nätter *</label>
+            <input type="number" id="days" min="1" value="1" required />
+          </div>
+
+          <fieldset class="addons-fieldset">
+            <legend>Tillägg (valfritt)</legend>
+            <label class="addon-label">
+              <input type="checkbox" name="addon" value="breakfast" />
+              Frukost — 100 kr/dag
+            </label>
+            <label class="addon-label">
+              <input type="checkbox" name="addon" value="tour" />
+              Spökvandring — 300 kr
+            </label>
+            <label class="addon-label">
+              <input type="checkbox" name="addon" value="seance" />
+              Nattlig seans — 500 kr
+            </label>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="discount-code">Kampanjkod (valfritt)</label>
+            <input type="text" id="discount-code" placeholder="T.ex. GHOST20" />
+          </div>
+
+          <div id="total-price" class="total-price">Totalt: <strong>0 kr</strong></div>
+
+          <button type="submit">Boka nu</button>
+        </form>
+
+        <div id="confirmation" class="confirmation" style="display:none;"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Spökhusbyrån AB — Vi tar inget ansvar för övernaturliga händelser.</p>
+  </footer>
+</body>
+</html>
