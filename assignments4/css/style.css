@@ -1,9 +1,86 @@
 
+body {
+  font-family: "Courier New", monospace;
+  margin: 0;
+  background: #e7ecf3;
+  color: #243447;
+}
+
+header {
+  background: #243447;
+  color: #f2f6fb;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 4px solid #7aa6c2;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  justify-content: center;
+}
+
+nav a {
+  color: #f2f6fb;
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 2px solid transparent;
+}
+
+nav a:hover {
+  border: 2px solid #7aa6c2;
+}
+
+.active {
+  font-weight: bold;
+  background: #7aa6c2;
+  color: #1d2b38;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+}
+
+article {
+  background: #fff;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border: 3px solid #243447;
+  border-radius: 0;
+  box-shadow: 6px 6px 0 #243447;
+}
+
+article a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #7aa6c2;
+  color: #1d2b38;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #243447;
+  box-shadow: 3px 3px 0 #243447;
+}
+
+article a:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #243447;
+}
+
 .tagline {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #555;
+  color: #4d6478;
 }
 
 .filter-section,
@@ -11,8 +88,8 @@
 .weather-section,
 .booking-section {
   background: #fff;
-  border: 3px solid #222;
-  box-shadow: 6px 6px 0 #222;
+  border: 3px solid #243447;
+  box-shadow: 6px 6px 0 #243447;
 }
 
 .filter-section {
@@ -48,12 +125,12 @@
 
 .filter-group input[type="range"] {
   width: 100%;
-  accent-color: #d72638;
+  accent-color: #7aa6c2;
 }
 
 .filter-group select {
   padding: 6px;
-  border: 2px solid #222;
+  border: 2px solid #243447;
   background: #fff;
   font-family: inherit;
   font-size: 0.9rem;
@@ -109,7 +186,7 @@
   font-size: 1.1rem;
 }
 
-.house-info .location { color: #555; font-size: 0.9rem; margin: 0; }
+.house-info .location { color: #4d6478; font-size: 0.9rem; margin: 0; }
 .house-info .price    { font-weight: bold; margin: 0; }
 .house-info .scare    { margin: 0; }
 .house-info .wifi     { margin: 0; font-size: 0.9rem; }
@@ -129,7 +206,7 @@
   display: inline-block;
   margin-bottom: 1.5rem;
   font-weight: bold;
-  color: #d72638;
+  color: #557c97;
   text-decoration: none;
 }
 
@@ -142,8 +219,8 @@
   grid-template-columns: 300px 1fr;
   gap: 2rem;
   background: #fff;
-  border: 3px solid #222;
-  box-shadow: 6px 6px 0 #222;
+  border: 3px solid #243447;
+  box-shadow: 6px 6px 0 #243447;
   margin-bottom: 2rem;
   overflow: hidden;
 }
@@ -165,7 +242,7 @@
   font-size: 1.6rem;
 }
 
-.location { color: #555; }
+.location { color: #4d6478; }
 
 .description {
   line-height: 1.6;
@@ -213,14 +290,14 @@
 
 .form-group input {
   padding: 8px;
-  border: 2px solid #222;
+  border: 2px solid #243447;
   font-family: inherit;
   font-size: 1rem;
   max-width: 300px;
 }
 
 .addons-fieldset {
-  border: 2px solid #222;
+  border: 2px solid #243447;
   margin-bottom: 1.2rem;
   padding: 1rem;
 }
@@ -242,39 +319,39 @@
   font-size: 1.3rem;
   margin: 1.2rem 0;
   padding: 0.8rem 1rem;
-  background: #ffd23f;
-  border: 2px solid #222;
+  background: #d6e5f0;
+  border: 2px solid #243447;
   display: inline-block;
 }
 
 .discount-note {
-  color: #d72638;
+  color: #557c97;
   font-size: 0.9rem;
 }
 
 button[type="submit"] {
   padding: 10px 20px;
-  background: #d72638;
-  color: white;
+  background: #243447;
+  color: #f2f6fb;
   font-family: inherit;
   font-size: 1rem;
   font-weight: bold;
-  border: 2px solid #222;
-  box-shadow: 4px 4px 0 #222;
+  border: 2px solid #7aa6c2;
+  box-shadow: 4px 4px 0 #557c97;
   cursor: pointer;
 }
 
 button[type="submit"]:hover {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #222;
+  box-shadow: 2px 2px 0 #557c97;
 }
 
 .confirmation {
   margin-top: 1.5rem;
   padding: 1.5rem;
-  background: #e9ffe9;
-  border: 3px solid #222;
-  box-shadow: 6px 6px 0 #222;
+  background: #edf4f8;
+  border: 3px solid #243447;
+  box-shadow: 6px 6px 0 #243447;
 }
 
 .confirmation h3 {
@@ -282,14 +359,14 @@ button[type="submit"]:hover {
 }
 
 .error {
-  background: #ffe9e9;
-  border: 3px solid #d72638;
+  background: #f4e7e7;
+  border: 3px solid #8f4d5a;
   padding: 1rem;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
 .error a {
-  color: #d72638;
+  color: #8f4d5a;
   font-weight: bold;
 }
